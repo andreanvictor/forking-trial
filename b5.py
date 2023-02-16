@@ -59,6 +59,15 @@ for fx_spot in FxSpot.objects.all():
         }
     )
 
+for fx_spot in FxSpot.objects.all():
+    feature_value_moving_averages.append(
+        {
+            'feature': self.feature,
+            'value_float': fx_spot.rate,
+            'created': datetime.datetime.now(),
+            'modified': datetime.datetime.now(),
+        }
+    )
 # perform bulk create
 FeatureValue.objects.bulk_create([
     FeatureValue(**kwargs).save() for kwargs in feature_value_moving_averages for source in kwargs.pop('sources', [fx_spot])
