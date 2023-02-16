@@ -40,11 +40,9 @@ feature = Feature(name='My feature')
 feature.save()
 
 # create a new FeatureValue instance with the source object
-feature_value = FeatureValue.objects.create(
-    feature=feature,
-    value_text='some value',
-)
+feature_value = FeatureValue.objects.create()
 feature_value.sources.add(source)
+
 
 
 feature_value_moving_averages = []
