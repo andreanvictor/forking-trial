@@ -31,8 +31,9 @@ FeatureValue.objects.bulk_create([
 
 
 # create a new source object
-source = Source(name='My source')
+source = Source(name='my source')
 source.save()
+
 
 # create a new feature object
 feature = Feature(name='My feature')
